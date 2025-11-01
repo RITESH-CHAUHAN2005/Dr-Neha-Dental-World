@@ -45,10 +45,10 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <a href="tel:+919953419955">
+            <a href="tel:+918800997173">
               <Button className="bg-gradient-to-r from-primary to-primary/90 hover:shadow-lg transition-all">
                 <Phone className="w-4 h-4 mr-2" />
-                Call: +91 99534 19955
+                Call Now
               </Button>
             </a>
           </div>
@@ -78,10 +78,10 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <a href="tel:+919953419955">
+              <a href="tel:+918800997173">
                 <Button className="w-full bg-gradient-to-r from-primary to-primary/90">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call: +91 99534 19955
+                  Call Now
                 </Button>
               </a>
             </div>

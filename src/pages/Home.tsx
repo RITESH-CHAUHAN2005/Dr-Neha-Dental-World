@@ -32,8 +32,8 @@ const Home = () => {
             >
               Book Appointment
             </a>
-            <a href="tel:+919953419955" className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all">
-              Call: +91 99534 19955 / +91 8800997173
+            <a href="tel:+918800997173" className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all">
+              Call Now
             </a>
           </div>
         </div>
