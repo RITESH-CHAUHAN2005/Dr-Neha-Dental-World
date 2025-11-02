@@ -6,19 +6,26 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
-        </div>
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
         
-        <div className="relative z-10 text-center text-white px-4 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/75 to-primary/85" />
+        
+        <div className="relative z-10 text-center text-white px-4 animate-fade-in max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
             Welcome To Dr Neha Dental World
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md">
             Your smile is our passion. Experience world-class dental care with advanced technology and compassionate service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -28,11 +35,11 @@ const Home = () => {
                 e.preventDefault();
                 document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 bg-white text-primary font-semibold rounded-full hover:shadow-xl transition-all"
+              className="px-8 py-4 bg-gradient-to-r from-accent to-accent/90 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all"
             >
               Book Appointment
             </a>
-            <a href="tel:+918800997173" className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all">
+            <a href="tel:+918800997173" className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all hover:scale-105">
               Call Now
             </a>
           </div>
@@ -83,8 +90,8 @@ const Home = () => {
       <section className="py-16 px-4 bg-gradient-to-b from-white to-secondary/20">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/30 to-white shadow-md hover:shadow-lg transition-all animate-scale-in">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-white shadow-md hover:shadow-lg transition-all animate-scale-in hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/90 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Smile className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">Comfort First</h3>
@@ -93,8 +100,8 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/30 to-white shadow-md hover:shadow-lg transition-all animate-scale-in">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-white shadow-md hover:shadow-lg transition-all animate-scale-in hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/90 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">Expert Care</h3>
@@ -103,8 +110,8 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/30 to-white shadow-md hover:shadow-lg transition-all animate-scale-in">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-white shadow-md hover:shadow-lg transition-all animate-scale-in hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/90 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">Safety & Hygiene</h3>
@@ -113,8 +120,8 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/30 to-white shadow-md hover:shadow-lg transition-all animate-scale-in">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/50 to-white shadow-md hover:shadow-lg transition-all animate-scale-in hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/90 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Heart className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">Compassionate Service</h3>
@@ -224,7 +231,7 @@ const Home = () => {
           <div className="text-center">
             <a 
               href="/services" 
-              className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-primary/90 text-white font-semibold rounded-full hover:shadow-lg transition-all"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-accent to-accent/90 text-white font-semibold rounded-full hover:shadow-lg transition-all hover:scale-105"
             >
               View All Services
             </a>

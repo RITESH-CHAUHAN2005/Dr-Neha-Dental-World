@@ -5,18 +5,27 @@ import receptionArea from "@/assets/reception-area.jpg";
 const videos = [
   {
     id: 1,
+    title: "Clinic Tour",
     thumbnail: "/videos/clinic-tour.mp4",
     url: "/videos/clinic-tour.mp4",
   },
   {
     id: 2,
+    title: "Dental Care",
     thumbnail: "/videos/dental-care.mp4",
     url: "/videos/dental-care.mp4",
   },
   {
     id: 3,
+    title: "Our Team",
     thumbnail: "/videos/team.mp4",
     url: "/videos/team.mp4",
+  },
+  {
+    id: 4,
+    title: "Dental Implant Treatment",
+    thumbnail: "https://drive.google.com/thumbnail?id=142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa&sz=w800",
+    url: "https://drive.google.com/uc?export=download&id=142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa",
   },
 ];
 
@@ -81,22 +90,31 @@ const Media = () => {
                 className="group relative cursor-pointer animate-scale-in overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all"
                 onClick={() => setSelectedVideo(video.url)}
               >
-                <video
-                  src={video.thumbnail}
-                  className="w-full h-64 object-cover"
-                  muted
-                  loop
-                  playsInline
-                  onMouseEnter={(e) => e.currentTarget.play()}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.pause();
-                    e.currentTarget.currentTime = 0;
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-8 h-8 text-primary ml-1" />
+                {video.id === 4 ? (
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    className="w-full h-64 object-cover"
+                  />
+                ) : (
+                  <video
+                    src={video.thumbnail}
+                    className="w-full h-64 object-cover"
+                    muted
+                    loop
+                    playsInline
+                    onMouseEnter={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause();
+                      e.currentTarget.currentTime = 0;
+                    }}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform mb-3">
+                    <Play className="w-8 h-8 text-accent ml-1" />
                   </div>
+                  <h3 className="text-white text-lg font-semibold drop-shadow-lg">{video.title}</h3>
                 </div>
               </div>
             ))}
@@ -148,12 +166,20 @@ const Media = () => {
             <X className="w-8 h-8" />
           </button>
           <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
-            <video
-              src={selectedVideo}
-              className="w-full rounded-lg"
-              controls
-              autoPlay
-            />
+            {selectedVideo?.includes('drive.google.com') ? (
+              <iframe
+                src={selectedVideo.replace('uc?export=download', 'file/d/142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa/preview')}
+                className="w-full aspect-video rounded-lg"
+                allow="autoplay"
+              />
+            ) : (
+              <video
+                src={selectedVideo}
+                className="w-full rounded-lg"
+                controls
+                autoPlay
+              />
+            )}
           </div>
         </div>
       )}
