@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[500px] sm:h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
         {/* Video Background */}
         <video 
           autoPlay 
@@ -18,28 +18,28 @@ const Home = () => {
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
         
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/75 to-primary/85" />
+        {/* Subtle Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/20" />
         
-        <div className="relative z-10 text-center text-white px-4 animate-fade-in max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 animate-fade-in max-w-5xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 drop-shadow-2xl leading-tight">
             Welcome To Dr Neha Dental World
           </h1>
-          <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-2xl mx-auto drop-shadow-lg px-2">
             Your smile is our passion. Experience world-class dental care with advanced technology and compassionate service.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <a 
               href="#appointment" 
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 bg-gradient-to-r from-accent to-accent/90 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent to-accent/90 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all text-sm sm:text-base"
             >
               Book Appointment
             </a>
-            <a href="tel:+918800997173" className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all hover:scale-105">
+            <a href="tel:+918800997173" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all hover:scale-105 text-sm sm:text-base">
               Call Now
             </a>
           </div>

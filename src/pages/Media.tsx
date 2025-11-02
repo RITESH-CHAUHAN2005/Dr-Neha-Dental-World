@@ -25,7 +25,7 @@ const videos = [
     id: 4,
     title: "Dental Implant Treatment",
     thumbnail: "https://drive.google.com/thumbnail?id=142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa&sz=w800",
-    url: "https://drive.google.com/uc?export=download&id=142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa",
+    url: "https://drive.google.com/file/d/142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa/preview",
   },
 ];
 
@@ -63,27 +63,27 @@ const Media = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary to-primary/80">
+      <section className="relative h-[300px] sm:h-[350px] md:h-[400px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary to-primary/80">
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">Media Gallery</h1>
-          <p className="text-xl md:text-2xl animate-slide-up">Explore Our Clinic & Services</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 animate-fade-in">Media Gallery</h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl animate-slide-up">Explore Our Clinic & Services</p>
         </div>
       </section>
 
       {/* Video Gallery */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-12 sm:py-16 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
-              <Play className="w-8 h-8 mr-3 text-primary" />
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4 flex items-center justify-center flex-wrap gap-2">
+              <Play className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
               Video Gallery
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-2">
               Watch our videos to learn more about our clinic and services
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {videos.map((video) => (
               <div
                 key={video.id}
@@ -123,19 +123,19 @@ const Media = () => {
       </section>
 
       {/* Image Gallery */}
-      <section className="py-16 px-4 bg-gradient-to-b from-white to-secondary/20">
+      <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-white to-secondary/20">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
-              <ImageIcon className="w-8 h-8 mr-3 text-primary" />
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4 flex items-center justify-center flex-wrap gap-2">
+              <ImageIcon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
               Photo Gallery
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-2">
               Take a virtual tour of our state-of-the-art facility
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {images.map((image) => (
               <div
                 key={image.id}
@@ -168,9 +168,10 @@ const Media = () => {
           <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             {selectedVideo?.includes('drive.google.com') ? (
               <iframe
-                src={selectedVideo.replace('uc?export=download', 'file/d/142BFNA7shp3cnA52kaQW2C6TK0gsK1Xa/preview')}
+                src={selectedVideo}
                 className="w-full aspect-video rounded-lg"
                 allow="autoplay"
+                allowFullScreen
               />
             ) : (
               <video
